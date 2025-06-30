@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 31,
+  "id": 29,
   "links": [],
   "panels": [
     {
@@ -78,7 +78,7 @@
         "sizing": "auto",
         "valueMode": "color"
       },
-      "pluginVersion": "12.0.0+security-01",
+      "pluginVersion": "12.0.2",
       "targets": [
         {
           "datasource": {
@@ -86,8 +86,9 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum by (route) (increase(http_requests_total[1m]))",
-          "legendFormat": "__auto",
+          "expr": "sum by (route) (increase(http_requests_total[$__range]))",
+          "interval": "",
+          "legendFormat": "{{rate_interval}}",
           "range": true,
           "refId": "A"
         }
@@ -174,7 +175,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.0+security-01",
+      "pluginVersion": "12.0.2",
       "targets": [
         {
           "editorMode": "code",
@@ -235,7 +236,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.0.0+security-01",
+      "pluginVersion": "12.0.2",
       "targets": [
         {
           "editorMode": "code",
@@ -298,7 +299,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.0+security-01",
+      "pluginVersion": "12.0.2",
       "targets": [
         {
           "editorMode": "code",
@@ -360,7 +361,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.0.0+security-01",
+      "pluginVersion": "12.0.2",
       "targets": [
         {
           "editorMode": "code",
@@ -452,7 +453,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.0+security-01",
+      "pluginVersion": "12.0.2",
       "targets": [
         {
           "editorMode": "code",
@@ -473,12 +474,12 @@
     "list": []
   },
   "time": {
-    "from": "2025-06-08T01:44:19.859Z",
-    "to": "2025-06-09T01:44:19.859Z"
+    "from": "now-3h",
+    "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "cloud_shop_monitoring",
   "uid": "17cec53b-975a-4347-8f43-41e6bf1d0bbf",
-  "version": 12
+  "version": 6
 }
