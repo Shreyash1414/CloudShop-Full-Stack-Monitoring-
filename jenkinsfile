@@ -13,8 +13,8 @@ pipeline {
                 sh 'kubectl apply -f manifests/order-service-monitor.yaml'
                 sh 'kubectl apply -f manifests/product-service-monitor.yaml'                
                 sh 'kubectl apply -f manifests/user-service-monitor.yaml'
-                sh 'kubectl port-forward svc/prometheus-kube-prometheus-prometheus -n monitoring 9090'
-                sh 'kubectl port-forward svc/prometheus-grafana -n monitoring 3000:80'
+                sh 'kubectl apply -f manifests/prometheus-nodeport.yaml'
+                sh 'kubectl apply -f manifests/grafana-nodeport.yaml'
             }
         }
     }
