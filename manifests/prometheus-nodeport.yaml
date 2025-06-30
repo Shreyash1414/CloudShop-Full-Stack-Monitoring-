@@ -6,7 +6,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    prometheus: prometheus-kube-prometheus-prometheus
+    app.kubernetes.io/name: prometheus
   ports:
     - name: web
       port: 9090
